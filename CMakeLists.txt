@@ -4,7 +4,7 @@ project(ffmpeg_tutorial_win)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_VERBOSE_MAKEFILE on)
 
-message(STATUS "==============WIN32=================")
+message(STATUS "==============WINDOWS APP=================")
 
 if(CMAKE_SIZEOF_VOID_P EQUAL 8)
     set(CURRENT_PLATFORM "x64")

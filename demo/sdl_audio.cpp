@@ -16,9 +16,12 @@ void AudioCallback(void* userdata, Uint8* stream, int len)
     ifs->read((char*)stream, len);
     if (ifs->gcount() <= 0)
     {
+        cerr << "read the end of pcm file!" << endl;
         SDL_PauseAudio(1);
     }
 }
+
+//ffmpeg - i v1080.mp4 - f s16le - ar 44100 test_pcm.pcm
 
 int main(int argc, char **argv) {
     //初始化 SDL 音频模块
@@ -36,7 +39,7 @@ int main(int argc, char **argv) {
     //      LLLL RRRR
     spec.callback = AudioCallback;//音频播放回调函数
     ifstream ifs("test_pcm.pcm",ios::binary);//二进制打开
-    if (!ifs)
+    if (!ifs.is_open())
     {
         cerr << "open pcm file failed!" << endl;
         return -1;
