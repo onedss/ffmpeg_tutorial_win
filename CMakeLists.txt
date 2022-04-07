@@ -51,4 +51,4 @@ foreach (demo ${demo_codes})
     target_link_libraries(${demo_basename} ${ffmpeg_dylibs} ${sdl2_dylibs})
 endforeach()
 
-add_executable(ffmpeg_tutorial main.cpp)
+#add_executable(ffmpeg_tutorial main.cpp)
